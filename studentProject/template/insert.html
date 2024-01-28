@@ -1,0 +1,12 @@
+<html>
+    {% extends "base.html" %}
+    {% block home %}
+    <br><br><h1 style="color: #04AA6D;">Insert Student Details</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form1.as_p}}
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% endblock %}
+</html>

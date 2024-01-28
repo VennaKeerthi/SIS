@@ -1,0 +1,47 @@
+<html>
+    {% extends "base.html" %}
+    {% block home %}
+    <style>
+    th {
+        color: darkslateblue;
+        width: 150px;
+        text-align: center;
+        font-size: 18px;
+        padding: 5px;
+    }
+    td {
+        font-size: 16px;
+        padding: 5px;
+        text-align: center;
+    }
+    </style>
+    <body>
+        <br><br>
+        <h1 style="color: #04AA6D;">{{Title}}</h1>
+        <table border="1">
+            <tr>
+                <th>S.No</th>
+                <th>Registration No</th>
+                <th>Name</th>
+                <th>Email ID</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>Attendance</th>
+                <th>CGPA</th>
+            </tr>
+            {% for k in Queryset %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{k.s_reg}}</td>
+                    <td>{{k.s_name}}</td>
+                    <td>{{k.s_email}}</td>
+                    <td>{{k.s_department}}</td>
+                    <td>{{k.s_semester}}</td>
+                    <td>{{k.s_attendance}}</td>
+                    <td>{{k.s_cgpa}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+    {% endblock %}
+</html>

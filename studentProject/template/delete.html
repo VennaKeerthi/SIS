@@ -1,0 +1,12 @@
+<html>
+    {% extends "base.html" %}
+    {% block home %}
+    <br><br><h1 style="color: #04AA6D;">Delete Student details</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form3.as_p}}
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% endblock %}
+</html>
